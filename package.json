@@ -1,0 +1,11 @@
+{
+  "name": "wordgames",
+  "version": "0.0.0",
+  "description": "word games",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "github.com/jasonm",
+  "license": "MIT"
+}
