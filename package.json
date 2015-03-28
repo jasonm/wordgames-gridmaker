@@ -10,6 +10,8 @@
   "author": "github.com/jasonm",
   "license": "MIT",
   "dependencies": {
-    "lodash": "^3.6.0"
+    "event-stream": "^3.3.0",
+    "lodash": "^3.6.0",
+    "markov": "0.0.7"
   }
 }

@@ -22,7 +22,7 @@ function lettersByFrequency() {
   return letters;
 };
 
-function gridFromLetters(letters) {
+function gridFromLetters(letters, cb) {
   var grid = [];
 
   for (var i = 0; i < 10; i++) {
@@ -32,26 +32,52 @@ function gridFromLetters(letters) {
     }
     grid.push(row);
   }
-  return grid;
+  cb(grid);
 };
 
-var grid = gridFromLetters(lettersByFrequency());
 
 function printGrid(grid) {
   for (var i = 0; i < grid.length; i++) {
     console.log(grid[i].join(""));
   }
 }
-printGrid(grid);
 
-var found = {};
-var traverser = new Traverser(5, grid, new Trie(data));
-traverser.onComplete(function() {
-  console.log(Object.keys(found).length);
-});
-traverser.search(function(word, positions) {
-  found[word] = found[word] || [];
-  found[word].push(positions);
+function findWords(grid) {
+  var found = {};
+  var traverser = new Traverser(5, grid, new Trie(data));
+  traverser.onComplete(function() {
+    console.log(Object.keys(found).length);
+  });
+  traverser.search(function(word, positions) {
+    found[word] = found[word] || [];
+    found[word].push(positions);
+  });
+};
+
+function gridFromMarkov(cb) {
+  var fs = require('fs');
+  var markov = require('markov');
+  var m = markov(1);
+  var s = fs.createReadStream(__dirname + '/norvig/spacey_1000.txt');
+  var grid = [];
+  m.seed(s, function() {
+    for (var i = 0; i < 10; i++) {
+      var line = [];
+      while (line.length < 40) {
+        var more = m.fill(m.pick(), 40);
+        line = _.flatten([line, more]);
+      }
+      line = _.take(line, 40);
+      grid.push(line);
+    }
+    cb(grid);
+  });
+};
+
+console.log("letters by markov");
+gridFromMarkov(function(grid) {
+  printGrid(grid);
+  findWords(grid);
 });
 
 // Found "word" at [ positions ]

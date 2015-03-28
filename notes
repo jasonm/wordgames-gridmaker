@@ -1,0 +1,89 @@
+How many words (5+ letters) found in a 40x10 grid of...
+
+...random letter selection?
+418
+611
+481
+956
+663
+479
+563
+510
+524
+511
+640
+641
+369
+705
+643
+552
+615
+902
+409
+481
+560
+446
+614
+359
+634
+474
+550
+681
+643
+740
+> x <- read.csv('/tmp/statstmpfile', header = F); summary(x); sd(x[ , 1])
+       V1       
+ Min.   :359.0  
+ 1st Qu.:481.0  
+ Median :561.5  
+ Mean   :579.1  
+ 3rd Qu.:642.5  
+ Max.   :956.0  
+[1] 137.4499
+
+...letters distributed by letter frequency in English language?
+2941
+3916
+2984
+2853
+3328
+3183
+2694
+3028
+4014
+3300
+2936
+> x <- read.csv('/tmp/statstmpfile', header = F); summary(x); sd(x[ , 1])
+       V1      
+ Min.   :2694  
+ 1st Qu.:2938  
+ Median :3028  
+ Mean   :3198  
+ 3rd Qu.:3314  
+ Max.   :4014  
+[1] 423.2421
+
+
+...from horizontal lines built from a markov model of the top 1000 most frequent english words?
+3215
+3875
+3608
+3913
+4420
+4426
+5000
+4174
+3480
+4038
+3820
+> x <- read.csv('/tmp/statstmpfile', header = F); summary(x); sd(x[ , 1])
+       V1      
+ Min.   :3215  
+ 1st Qu.:3714  
+ Median :3913  
+ Mean   :3997  
+ 3rd Qu.:4297  
+ Max.   :5000  
+[1] 498.537
+> 
+> 
