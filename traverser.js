@@ -2,10 +2,14 @@
 var Traverser,
   __bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; };
 
+var Trie = require("./trie");
+
 Traverser = (function() {
   function Traverser(minWordLength, grid, trie) {
     this.minWordLength = minWordLength;
     this.grid = grid;
+    this.gridRows = grid.length;
+    this.gridCols = grid[0].length;
     this.trie = trie;
     this.visited = __bind(this.visited, this);
     this.adjacentCells = __bind(this.adjacentCells, this);
@@ -21,11 +25,11 @@ Traverser = (function() {
   Traverser.prototype.search = function(callback) {
     var cb, col, row, _fn, _i, _j, _k, _len, _ref, _results,
       _this = this;
-    for (row = _i = 0; _i <= 4; row = ++_i) {
+    for (row = _i = 0; _i <= _this.gridRows - 1; row = ++_i) {
       _fn = function(row, col) {
         return _this.traverse([[row, col]], callback);
       };
-      for (col = _j = 0; _j <= 4; col = ++_j) {
+      for (col = _j = 0; _j <= _this.gridCols - 1; col = ++_j) {
         _fn(row, col);
       }
     }
@@ -74,18 +78,19 @@ Traverser = (function() {
   };
 
   Traverser.prototype.adjacentCells = function(row, col) {
-    var adj, c, r, _i, _j, _len, _len1, _ref, _ref1;
+    var adj, c, r, _i, _j, _len, _len1, _ref, _ref1,
+        _this = this;
     adj = [];
     _ref = [row - 1, row, row + 1];
     for (_i = 0, _len = _ref.length; _i < _len; _i++) {
       r = _ref[_i];
-      if (r < 0 || r > 4) {
+      if (r < 0 || r > _this.gridRows - 1) {
         continue;
       }
       _ref1 = [col - 1, col, col + 1];
       for (_j = 0, _len1 = _ref1.length; _j < _len1; _j++) {
         c = _ref1[_j];
-        if (c < 0 || c > 4) {
+        if (c < 0 || c > _this.gridCols - 1) {
           continue;
         }
         if (!(r === row && c === col)) {
@@ -110,3 +115,5 @@ Traverser = (function() {
   return Traverser;
 
 })();
+
+module.exports = Traverser;
