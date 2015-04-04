@@ -1,36 +1,8 @@
 How many words (5+ letters) found in a 40x10 grid of...
 
 ...random letter selection?
-418
-611
-481
-956
-663
-479
-563
-510
-524
-511
-640
-641
-369
-705
-643
-552
-615
-902
-409
-481
-560
-446
-614
-359
-634
-474
-550
-681
-643
-740
+418 611 481 956 663 479 563 510 524 511 640 641 369 705 643 552 615 902 409 481
+560 446 614 359 634 474 550 681 643 740
 > x <- read.csv('/tmp/statstmpfile', header = F); summary(x); sd(x[ , 1])
        V1       
  Min.   :359.0  
@@ -42,17 +14,7 @@ How many words (5+ letters) found in a 40x10 grid of...
 [1] 137.4499
 
 ...letters distributed by letter frequency in English language?
-2941
-3916
-2984
-2853
-3328
-3183
-2694
-3028
-4014
-3300
-2936
+2941 3916 2984 2853 3328 3183 2694 3028 4014 3300 2936
 > x <- read.csv('/tmp/statstmpfile', header = F); summary(x); sd(x[ , 1])
        V1      
  Min.   :2694  
@@ -65,17 +27,7 @@ How many words (5+ letters) found in a 40x10 grid of...
 
 
 ...from horizontal lines built from a markov model of the top 1000 most frequent english words?
-3215
-3875
-3608
-3913
-4420
-4426
-5000
-4174
-3480
-4038
-3820
+3215 3875 3608 3913 4420 4426 5000 4174 3480 4038 3820
 > x <- read.csv('/tmp/statstmpfile', header = F); summary(x); sd(x[ , 1])
        V1      
  Min.   :3215  
@@ -85,5 +37,53 @@ How many words (5+ letters) found in a 40x10 grid of...
  3rd Qu.:4297  
  Max.   :5000  
 [1] 498.537
+> 
+> 
+
+
+
+from two-dimensional inbound markov chains filling to new spots (order 1)
+4439 4344 4271 4376 3777 4872 4271 4298 4329 4539 4057 4134
+> x <- read.csv('/tmp/statstmpfile', header = F); summary(x); sd(x[ , 1])
+       V1      
+ Min.   :3777  
+ 1st Qu.:4237  
+ Median :4314  
+ Mean   :4309  
+ 3rd Qu.:4392  
+ Max.   :4872  
+[1] 265.0977
+> 
+> 
+
+
+
+from two-dimensional inbound markov chains filling to new spots (order 2)
+4025 4246 3813 4485 4529 5042 4378 5307 4575 4610 4564 4765 5135 5637 5073 4367
+4636 5274 5599 4591 4021 4523 4739 4240 5142 4468 4922 4484 4765 3824 4958 5220
+4689
+> x <- read.csv('/tmp/statstmpfile', header = F); summary(x); sd(x[ , 1])
+       V1      
+ Min.   :3813  
+ 1st Qu.:4468  
+ Median :4610  
+ Mean   :4686  
+ 3rd Qu.:5042  
+ Max.   :5637  
+[1] 460.4157
+> 
+> 
+
+from two-dimensional inbound markov chains filling to new spots (order 3)
+2815 3256 3285 2652 1726 2396 2002 2133 2434 2780 2006 2978
+> x <- read.csv('/tmp/statstmpfile', header = F); summary(x); sd(x[ , 1])
+       V1      
+ Min.   :1726  
+ 1st Qu.:2101  
+ Median :2543  
+ Mean   :2539  
+ 3rd Qu.:2856  
+ Max.   :3285  
+[1] 508.1237
 > 
 > 
