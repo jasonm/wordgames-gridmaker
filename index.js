@@ -256,7 +256,7 @@ function gridFromIncrMarkov(cb) {
 
 // console.log("letters by incremental markov");
 gridFromIncrMarkov(function(grid) {
-  // printGrid(grid);
+  printGrid(grid);
   findWords(grid);
 });
 
