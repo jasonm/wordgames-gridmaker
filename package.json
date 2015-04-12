@@ -1,7 +1,7 @@
 {
-  "name": "wordgames",
+  "name": "gridmaker",
   "version": "0.0.0",
-  "description": "word games",
+  "description": "makes grids of letters for word games",
   "main": "gridmaker.js",
   "scripts": {
     "start": "node index.js",
