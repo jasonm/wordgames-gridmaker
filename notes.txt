@@ -26,7 +26,7 @@ How many words (5+ letters) found in a 40x10 grid of...
 [1] 423.2421
 
 
-...from horizontal lines built from a markov model of the top 1000 most frequent english words?
+...from horizontal lines built from a Markov model of the top 1000 most frequent English words?
 3215 3875 3608 3913 4420 4426 5000 4174 3480 4038 3820
 > x <- read.csv('/tmp/statstmpfile', header = F); summary(x); sd(x[ , 1])
        V1      
@@ -42,7 +42,7 @@ How many words (5+ letters) found in a 40x10 grid of...
 
 
 
-from two-dimensional inbound markov chains filling to new spots (order 1)
+From two-dimensional inbound markov chains filling to new spots (order 1)
 4439 4344 4271 4376 3777 4872 4271 4298 4329 4539 4057 4134
 > x <- read.csv('/tmp/statstmpfile', header = F); summary(x); sd(x[ , 1])
        V1      
