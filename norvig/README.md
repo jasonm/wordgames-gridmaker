@@ -1,4 +1,10 @@
-http://norvig.com/ngrams/
+Natural Language Corpus data from http://norvig.com/ngrams/ which says:
+
+> Data files are derived from the Google Web Trillion Word Corpus, as
+> [ described ](http://googleresearch.blogspot.com/2006/08/all-our-n-gram-are-belong-to-you.html)
+> by Thorsten Brants and Alex Franz, and [ distributed ](http://tinyurl.com/ngrams) 
+> y the Linguistic Data Consortium.  Code copyright (c) 2008-2009 by Peter Norvig.
+> You are free to use this code under the MIT license.
 
 ```
 curl -O http://norvig.com/ngrams/count_1w.txt
